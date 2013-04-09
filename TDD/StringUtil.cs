@@ -13,7 +13,8 @@ namespace TDD
             while (start < input.Length)
             {
                 int end = FindLogicalEndOfWord(charArray, start);
-                SwapInRange(charArray, start, end);
+                //Reverse a single word within the string
+                ReverseInRange(charArray, start, end);
                 start = FindBeginningOfNextWord(charArray, end + 1);
             }
             return new string(charArray);
@@ -38,7 +39,7 @@ namespace TDD
             return lastNonSpaceIndex - 1;
         }
 
-        private static void SwapInRange(char[] charArray, int beginning, int end)
+        private static void ReverseInRange(char[] charArray, int beginning, int end)
         {
             //Swap the beginning and end characters progressively until the middle of the sub-range is reached
             int middle = (end + beginning) / 2;
